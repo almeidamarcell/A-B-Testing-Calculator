@@ -1,0 +1,273 @@
+.calculator-section {
+    background-color: rgba(236,240,241,0);
+}
+.calculator-section .calculator {
+    padding: 0 0;
+}
+.calculator-section .title {
+    font-weight: 700;
+    color: #30373b;
+    font-size: 30px;
+    text-align: center;
+    line-height: 36px;
+}
+.calculator-section .sub-title {
+    color: #30373b;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.calculator-section .description {
+    color: #30373b;
+    font-size: 16px;
+    text-align: left;
+    line-height: 25px;
+    padding: 0 15px;
+}
+.calculator-form {
+    font-size: 0;
+    margin-top: 0;
+}
+.calculator-form .col-title {
+    color: #555555;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    height: 18px;
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
+}
+.calculator-form .col {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-top: 1px solid rgba(210,218,226,0.7);    
+}
+.calculator-form .variation-col {
+    width: 10%;
+}
+.calculator-form .visitor-col {
+    width: 35%;
+}
+.calculator-form .conversion-col {
+    width: 35%;
+}
+.calculator-form .rate-col {
+    width: 20%;
+}
+.calculator-form .variation-col .text-el {
+    line-height: 117px;
+    font-size: 24px;
+    color: #555555;
+}
+.calculator-form .frame-input {
+    text-align: center;
+    padding: 33.5px 5px;
+}
+.calculator-form input {
+    margin: 0;
+    width: 100%;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    border: 0px solid #ccc;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px 0;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border-bottom: 2px solid #43464b;
+    border-radius: 0;
+    background: inherit;
+}
+.calculator-form input::-webkit-outer-spin-button, .calculator-form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.calculator-form .rate-col .rate-result {
+    line-height: 116px;
+    color: #555555;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+.flex-container > .form-wrapper {
+    width: 780px;
+    margin: 10px;
+}
+
+.flex-container > .result-wrapper {
+    width: 360px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    border-top: 1px solid rgba(210,218,226,0.7);
+    border-bottom: 1px solid rgba(210,218,226,0.7);  
+}
+.result-a {
+    background-color: #f2f2f2;
+    border-top: 1px solid rgba(210,218,226,0.7);
+}
+.result-b {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid rgba(210,218,226,0.7);
+}
+.text-el.result-a, .text-el.result-b {
+    font-family: Montserrat;
+}
+.js-for-a, .js-for-b, .js-comparison, .js-total {
+    font-family: Montserrat;
+}
+.result-wrapper .sub-title {
+    margin-top: 25px;
+}
+.result-wrapper .sub-title p {
+    text-align: left !important;
+    padding: 0 15px;
+}
+.result-wrapper .description span {
+    font-weight: 600;
+}
+.better {
+    background: rgba(11, 232, 129, 1) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+.better input {
+    color: #fff !important;
+    font-weight: 600 !important;
+    border-color: #fff !important;    
+}
+.res-one, .res-two, .res-th {
+    text-align: left;
+    margin-top: 25px;
+    padding: 0 15px;
+    font-family: Montserrat;
+    color: #00aeef;
+    margin-bottom: 25px;
+}
+@media (max-width: 1024px) {
+    .calculator-form .variation-col {
+        width: 10%;
+    }
+    .calculator-form .rate-col {
+        width: 20%;
+    }
+    .calculator-form .col-title {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-section .calculator {
+        padding: 35px 0;
+    }
+    .calculator-section .title {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .calculator-section .sub-title {
+        font-size: 14px;
+    }
+    .calculator-section .description {
+        font-size: 13px;
+    }
+    .calculator-form .col-title {
+        font-size: 13px;
+        margin-bottom: 10px !important;
+    }
+    .calculator-form input {
+        height: 37px;
+    }
+    .calculator-form .variation-col .text-el {
+        line-height: 97px;
+        font-size: 18px;
+    }
+    .calculator-form .rate-col .rate-result {
+        line-height: 98px;
+        height: 98px;
+        font-size: 16px;
+    }
+    .res-one, .res-two, .res-th {
+        font-size: 14px;
+    }
+    .calculator-form {
+        margin-top: 0;
+    }
+    .flex-container {
+        display: grid;
+    }
+    .flex-container > .form-wrapper, .flex-container > .result-wrapper {
+        width: 97%;     
+    }    
+}
+@media (max-width: 480px) {
+    .calculator-section .calculator {
+        padding: 10px 0;
+        background-color: #f2f2f2;
+    }
+    .calculator-section .title {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .calculator-section .sub-title {
+        font-size: 16px;
+        margin-top:10px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+    .calculator-section .description {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .calculator-form {
+        margin-top: 15px;
+    }
+    .calculator-form .variation-col {
+        width: 10%;
+    }
+    .calculator-form .rate-col {
+        width: 20%;
+    }
+    .calculator-form .variation-col .text-el {
+        line-height: 98px;
+        height: 98px;
+        font-size: 14px;
+    }
+    .calculator-form .rate-col .rate-result {
+        line-height: 98px;
+        height: 98px;
+        font-size: 14px;
+    }
+    .calculator-form .col-title {
+        font-size: 12px;
+        margin-bottom: 5px !important;
+        letter-spacing: -0.5px;
+        font-weight: 300;
+    }
+    .calculator-form .col-title {
+        height: 25px;
+        padding: 4px 4px;
+        word-break: break-word;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important; 
+        background-color: rgba(210,218,226,0.7);              
+    }
+    .calculator-form input {
+        font-size: 14px;
+    }
+    .flex-container > .form-wrapper, .flex-container > .result-wrapper {
+        width: 94%;     
+    }     
+}
+#calc input:focus {
+    outline: 0px;
+}
+#calc {
+    font-family: 'Montserrat', sans-serif;
+}
