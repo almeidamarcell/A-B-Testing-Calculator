@@ -59,10 +59,10 @@
 	               <p style="text-align: center;">Dine resultater:</p>
 	            </h4>
 	            <div class="description ab-res " style="display: none;">
-	               <p style="text-align: left;"><strong>Original</strong> (versjon A) konverterte<strong> <span class="js-comparison">48%</span></strong> bedre enn <strong>variant</strong> (versjon B). Vi er<strong> <span class="js-total">69</span>%</strong> sikre på at din versjon <span class="js-better">B</span> er bedre enn din versjon B.<br><br>Du burde nå lage en ny hypotese for å kunne gjøre en A/B test til med samme original, dette kalles "rinse and repeat". Lykke til!</p>
+	               <p style="text-align: left;"><strong>Original</strong> (versjon A) konverterte<strong> <span class="js-comparison">{{better}}%</span></strong> bedre enn <strong>variant</strong> (versjon B). Vi er<strong> <span class="js-total">69</span>%</strong> sikre på at din versjon <span class="js-better">B</span> er bedre enn din versjon B.<br><br>Du burde nå lage en ny hypotese for å kunne gjøre en A/B test til med samme original, dette kalles "rinse and repeat". Lykke til!</p>
 	            </div>
 	            <div class="description ba-res" style="display: block;">
-	               Variant (versjon B) konverterte <span class="js-comparison">48%</span> bedre enn <strong>original</strong> (versjon A). Vi er<strong> <span class="js-total">69</span>%</strong> sikre på at endringene i versjon <span class="js-better">B</span> vil bidra til å øke din konverteringsrate.<br><br>Gratulerer! Din variant utgjorde en forskjell. Fortsett det gode arbeidet, test alt - Alltid!
+	               Variant (versjon B) konverterte <span class="js-comparison">{{better}}%</span> bedre enn <strong>original</strong> (versjon A). Vi er<strong> <span class="js-total">69</span>%</strong> sikre på at endringene i versjon <span class="js-better">B</span> vil bidra til å øke din konverteringsrate.<br><br>Gratulerer! Din variant utgjorde en forskjell. Fortsett det gode arbeidet, test alt - Alltid!
 	            </div>
 	            <div class="description b-res" style="display: none;">
 	               <strong>Variant "B"</strong> konverterte<strong> <span class="js-comparison">48%</span></strong> bedre enn <strong>Variant "A"</strong>. Vi er <span class="js-total">69</span>% sikre på at endringene i variant "<strong><span class="js-better">B</span></strong>" vil forbedre dine konverteringsrater.
@@ -92,7 +92,8 @@
   			result1: '',
   			result2: '',
   			isBetterA: false,
-  			isBetterB: true,
+			isBetterB: true,
+			better: ''  
   		},
   		methods: {
   			countA: function() {
@@ -107,7 +108,8 @@
   				} else if (this.result1 < this.result2){
   					this.isBetterA = false
   					this.isBetterB = false
-  				}
+				}
+				this.better = (1 - (this.result1/this.result2)) * 100  
   			},
   			countB: function() {
 				this.result2 = ((this.jsConversionB / this.jsVisitorB) * 100).toFixed(1);
@@ -120,12 +122,14 @@
   				} else if (this.result1 < this.result2){
   					this.isBetterA = false
   					this.isBetterB = false
-  				}
+				}
+				this.better = (1 - (this.result1/this.result2)) * 100  
   			}
   		},
 		mounted() {
 		    this.result1 = this.jsConversionA / this.jsVisitorA * 100 // Counts on start
-		    this.result2 = this.jsConversionB / this.jsVisitorB * 100
+			this.result2 = this.jsConversionB / this.jsVisitorB * 100
+			this.better = (1 - (this.result1/this.result2)) * 100
 		},
 		watch: {
             search: function (value) {
